@@ -1,0 +1,112 @@
+generated: '2026-08-28'
+method: probed
+source: >-
+  Live GET probes of /.well-known/* on every Solar Mosaic host named in apis.yml, plus the
+  successor host solarservicingllc.com that joinmosaic.com now redirects to.
+note: >-
+  No pointer of type WellKnown or SecurityTxt is emitted from this file: not one path returned a
+  real document. The 200s recorded on developer.joinmosaic.com are the ReadMe password-gate
+  single-page-app shell (Content-Type text/html, body begins "<!DOCTYPE html><html ng-app=\"hub\"")
+  served for every unmatched path on that host, which is the dominant false positive on this probe
+  and is recorded here as a miss. api.joinmosaic.com answers HTTP 503 from nginx on every path.
+hosts:
+- host: developer.joinmosaic.com
+  note: ReadMe-hosted developer portal; catch-all 200 HTML shell on unmatched paths.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    result: miss
+    detail: HTML password-gate shell, not an RFC 9116 document.
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    result: miss
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    result: miss
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    result: miss
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    result: miss
+    detail: HTML password-gate shell, not a plugin manifest.
+    file: null
+- host: api.joinmosaic.com
+  note: API host resolves with a valid TLS certificate but nginx answers 503 on every path.
+  documents:
+  - path: /.well-known/security.txt
+    status: 503
+    result: miss
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 503
+    result: miss
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 503
+    result: miss
+    file: null
+  - path: /.well-known/api-catalog
+    status: 503
+    result: miss
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 503
+    result: miss
+    file: null
+- host: joinmosaic.com
+  note: Company website; root 301-redirects to the successor solarservicingllc.com.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    result: miss
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    result: miss
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    result: miss
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    result: miss
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    result: miss
+    file: null
+- host: solarservicingllc.com
+  note: >-
+    Successor host operated by Solar Servicing LLC, the acquirer of the Mosaic loan portfolio.
+    Probed because every joinmosaic.com page now resolves here; not a Solar Mosaic-controlled host.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    result: miss
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    result: miss
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    result: miss
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    result: miss
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    result: miss
+    file: null
+summary:
+  hosts_probed: 4
+  paths_probed: 20
+  documents_found: 0

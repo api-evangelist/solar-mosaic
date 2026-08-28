@@ -1,0 +1,22 @@
+generated: '2026-08-28'
+method: searched
+source: >-
+  Searched joinmosaic.com (now redirecting to solarservicingllc.com) and the
+  developer.joinmosaic.com portal for developer plans, API pricing or a partner pricing page.
+summary: >-
+  Solar Mosaic published no developer plans or API pricing. The Mosaic Financing API was a private
+  partner integration for solar installers, dealers and capital partners — access came with a
+  commercial dealer relationship, not a self-serve tier — and the portal that would document any
+  commercial terms is password-gated. The consumer-facing loan products were priced per loan
+  (APR/term) rather than as API plans, and the company is no longer originating loans.
+plans: []
+plan_count: 0
+pricing_model: partner-agreement
+self_serve_signup: false
+evidence:
+- url: https://joinmosaic.com/
+  status: 200
+  note: 301-redirects to solarservicingllc.com; no developer pricing page
+- url: https://developer.joinmosaic.com/
+  status: 302
+  note: password gate; any commercial terms are behind it

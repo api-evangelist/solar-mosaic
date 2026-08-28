@@ -1,0 +1,70 @@
+generated: '2026-08-28'
+method: searched
+source: >-
+  Live probes of joinmosaic.com, developer.joinmosaic.com, api.joinmosaic.com and
+  status.joinmosaic.com, plus public reporting of the Chapter 11 filing and the September 2025
+  asset sale.
+summary: >-
+  Solar Mosaic is a wound-down provider. The company filed Chapter 11 on 2025-06-09 and its loan
+  portfolio was acquired in September 2025 by Solar Servicing LLC, which stated it would not
+  originate new solar loans. Every public surface reflects that: the website redirects to the
+  acquirer, the API host answers 503, and the status page is deactivated.
+operational_status: wound-down
+company_status:
+  state: acquired-after-chapter-11
+  chapter_11_filed: '2025-06-09'
+  venue: US Bankruptcy Court, Southern District of Texas
+  acquirer: Solar Servicing LLC
+  acquisition_period: '2025-09'
+  successor_site: https://solarservicingllc.com/
+  new_originations: false
+  note: >-
+    The acquirer publicly stated there are no plans to originate new solar loans; servicing of the
+    existing portfolio continues.
+api_status:
+  api: Mosaic Financing API
+  portal: https://developer.joinmosaic.com/
+  portal_reachable: true
+  portal_public: false
+  portal_gate: password
+  portal_detail: >-
+    Every path 302s to /password and returns the ReadMe password-gate shell. No reference,
+    operation list, changelog or machine-readable contract is publicly reachable.
+  base_host: https://api.joinmosaic.com
+  base_host_status: 503
+  base_host_detail: >-
+    Host resolves and presents a valid TLS certificate (expires 2027-01-12) but nginx answers
+    HTTP 503 Service Temporarily Unavailable on every path probed, including / and
+    /.well-known/*. The API is not callable.
+status_page:
+  url: https://status.joinmosaic.com
+  http_status: 200
+  live: false
+  detail: >-
+    Atlassian Statuspage responds 200 but the document title is "Mosaic Status - Page Inactive" —
+    a deactivated page, i.e. a soft-404. No StatusPage pointer is emitted from this file, because
+    the provider no longer serves a working status page.
+versioning_policy:
+  published: false
+  detail: Not publicly documented; the reference that would carry it is password-gated.
+deprecation_policy:
+  published: false
+  sunset_header: unknown
+  detail: >-
+    No RFC 8594 Deprecation/Sunset policy is publicly documented. No Deprecation pointer is
+    emitted from this file.
+sla:
+  published: false
+deprecated_operations: []
+evidence:
+- url: https://joinmosaic.com/
+  status: 200
+  note: 301-redirects to https://solarservicingllc.com/
+- url: https://developer.joinmosaic.com/
+  status: 302
+  note: redirects to /password (ReadMe password gate)
+- url: https://api.joinmosaic.com/
+  status: 503
+- url: https://status.joinmosaic.com
+  status: 200
+  note: body title "Mosaic Status - Page Inactive"

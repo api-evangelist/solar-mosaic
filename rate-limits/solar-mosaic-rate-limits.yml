@@ -1,0 +1,32 @@
+generated: '2026-08-28'
+method: searched
+source: >-
+  Searched developer.joinmosaic.com for a published rate-limit reference and observed response
+  headers on the live hosts.
+summary: >-
+  No rate limits are published for the Mosaic Financing API. The reference that would document them
+  is behind the developer portal's password gate, and the API host itself answers 503, so no limit
+  or limit header could be observed on the API. limit_count is 0 — an honest zero, not an omission.
+rate_limits: []
+limit_count: 0
+headers_documented: []
+status_code_on_exhaustion: unknown
+observed_non_api:
+  note: >-
+    NOT the Mosaic Financing API's limits. Recorded separately so it is never counted as a
+    provider-published API rate limit. The ReadMe documentation host returns its own platform edge
+    limit headers on the password-gate response; these belong to ReadMe's hosting, not to Mosaic's
+    API.
+  host: developer.joinmosaic.com
+  observed_headers:
+  - X-RateLimit-Limit: '100'
+  - X-RateLimit-Remaining: '98'
+  - X-RateLimit-Reset: '1787943251'
+  attribution: ReadMe (readme.io) documentation platform edge
+evidence:
+- url: https://developer.joinmosaic.com/
+  status: 302
+  note: password gate; no public rate-limit reference
+- url: https://api.joinmosaic.com/
+  status: 503
+  note: API host unavailable; no runtime limit headers observable

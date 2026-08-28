@@ -1,0 +1,37 @@
+generated: '2026-08-28'
+method: searched
+source: >-
+  Searched npm (registry.npmjs.org text search and the @solarmosaic scope), PyPI, RubyGems and the
+  github.com/solarmosaic organization for a first-party client library for the Mosaic Financing API.
+summary: >-
+  Solar Mosaic published no first-party SDK or client library for the Mosaic Financing API on any
+  public package registry. The company's GitHub organization (github.com/solarmosaic, 26 public
+  repositories, created 2014-03-08) contains only general-purpose web and JVM build tooling and
+  forks — Gulp tasks, jQuery plugins, Handlebars helpers, Scala/Java utility libraries, a Zendesk
+  client and a QuickBase client — none of which is a client for the Mosaic Financing API. No
+  `type: SDKs` pointer is emitted, because sdk_count must not be credited for unrelated tooling.
+packages: []
+package_count: 0
+official_sdk_count: 0
+registries_searched:
+- registry: npm
+  query: joinmosaic
+  results: 0
+- registry: npm
+  query: 'scope:solarmosaic'
+  results: 0
+- registry: pypi
+  query: joinmosaic
+  status: 404
+github_organization:
+  url: https://github.com/solarmosaic
+  name: Mosaic
+  location: Oakland, CA
+  description: Empowering millions of people to profit from clean energy.
+  public_repos: 26
+  created: '2014-03-08'
+  last_activity: '2021-10-12'
+  api_client_libraries: 0
+  note: >-
+    Most recent push across the organization is 2021-10-12; the organization is dormant and predates
+    the wind-down. Repositories are internal/general tooling, not API clients.
