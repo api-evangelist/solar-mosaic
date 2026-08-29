@@ -13,6 +13,17 @@ description: >-
   loans. As of this profile the joinmosaic.com website 301-redirects to solarservicingllc.com, the
   api.joinmosaic.com host returns HTTP 503, and the Mosaic status page reports "Page Inactive".
 url: https://raw.githubusercontent.com/api-evangelist/solar-mosaic/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://files.readme.io/0b31c0e-small-imageedit_17_2765500207.png
 x-type: company
 x-source: harvest:secondary-market
