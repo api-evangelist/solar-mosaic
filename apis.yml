@@ -24,6 +24,21 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+accessModel:
+  pricing: unknown
+  onboarding: approval
+  trial: false
+  try_now: false
+  public: false
+  label: Requires approval
+  confidence: low
+  source:
+  - plans
+  - rate-limits
+  - security
+  - {url: 'https://joinmosaic.com/', status: 301, note: 'declared website redirects to https://solarservicingllc.com/ — a different registrable domain (joinmosaic.com -> solarservicingllc.com), possible rename or acquisition (probed 2026-09-03, roadmap#169)'}
+  generated: '2026-09-03'
+  method: derived
 image: https://files.readme.io/0b31c0e-small-imageedit_17_2765500207.png
 x-type: company
 x-source: harvest:secondary-market
