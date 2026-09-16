@@ -46,7 +46,7 @@ x-type: company
 x-source: harvest:secondary-market
 specificationVersion: '0.20'
 created: '2026-08-28'
-modified: '2026-08-28'
+modified: '2026-09-15'
 tags:
 - Company
 - Financial-Services
@@ -139,3 +139,4 @@ x-coverage:
   - url: https://status.joinmosaic.com
     status: 200
   checked: '2026-08-28'
+x-status: defunct
